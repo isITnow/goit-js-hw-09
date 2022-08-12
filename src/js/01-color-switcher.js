@@ -11,12 +11,12 @@ startBtn.addEventListener('click', onStartBtnClick);
 stopBtn.addEventListener('click', onStopBtnClick);
 
 function onStartBtnClick() {
+    startBtn.disabled = true;
+    stopBtn.disabled = false;
     timerId = setInterval(setBodyColor, 1000);
     function setBodyColor() {
         const color = getRandomHexColor();
         document.body.style.backgroundColor = `${color}`;
-        startBtn.disabled = true;
-        stopBtn.disabled = false;
     }
 }
 
