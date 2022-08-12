@@ -6,7 +6,6 @@ formEl.addEventListener('submit', onFormSubmit);
 function onFormSubmit(evt) {
     evt.preventDefault();
     for (let index = 0; index < formEl.amount.value; index += 1) {
-        // console.log(typeof formEl.amount.value);
         createPromise(
             index + 1,
             Number(formEl.delay.value) + Number(formEl.step.value) * index,
