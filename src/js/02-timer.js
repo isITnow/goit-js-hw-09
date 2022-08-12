@@ -3,6 +3,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 
 const btnStartEl = document.querySelector('[data-start]');
+const inputEl = document.querySelector('.input');
 const daysSpanEl = document.querySelector('[data-days]');
 const hoursSpanEl = document.querySelector('[data-hours]');
 const minutesSpanEl = document.querySelector('[data-minutes]');
@@ -12,7 +13,7 @@ btnStartEl.disabled = true;
 let timerId = null;
 let settedTime;
 
-const flatPickr = flatpickr('input#datetime-picker', {
+flatpickr('input#datetime-picker', {
     enableTime: true,
     time_24hr: true,
     defaultDate: new Date(),
@@ -33,12 +34,15 @@ const flatPickr = flatpickr('input#datetime-picker', {
 btnStartEl.addEventListener('click', onBtnStartClick);
 function onBtnStartClick() {
     btnStartEl.disabled = true;
+    inputEl.disabled = true;
     timerId = setInterval(initTimer, 1000);
     function initTimer() {
         let timerTime = settedTime - new Date().getTime();
         if (timerTime <= 0) {
             Notiflix.Notify.success(`it's BEER 🍺 time`);
             clearInterval(timerId);
+            inputEl.disabled = false;
+
             return;
         }
         fillConuterValue(convertMs(timerTime));
