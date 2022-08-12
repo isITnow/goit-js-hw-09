@@ -16,3 +16,32 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.btn {
+  padding: 10px;
+  display: inline-block;
+  border: 3px solid rgba(95, 158, 160, 0.774);
+  background-color: rgba(95, 158, 160, 0.425);
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.input {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.timer {
+  margin-top: 8px;
+  padding: 10px;
+  border: 3px solid rgba(95, 158, 160, 0.774);
+  border-radius: 5px;
+  width: 278px;
+}
+
+.value,
+.label {
+  font-size: 23px;
+}

@@ -33,11 +33,11 @@ const flatPickr = flatpickr('input#datetime-picker', {
 btnStartEl.addEventListener('click', onBtnStartClick);
 function onBtnStartClick() {
     btnStartEl.disabled = true;
-    timerId = setInterval(detDeltaTime, 1000);
-    function detDeltaTime() {
+    timerId = setInterval(initTimer, 1000);
+    function initTimer() {
         let timerTime = settedTime - new Date().getTime();
         if (timerTime <= 0) {
-            Notiflix.Notify.success('Beer time has come');
+            Notiflix.Notify.success(`it's BEER 🍺 time`);
             clearInterval(timerId);
             return;
         }
